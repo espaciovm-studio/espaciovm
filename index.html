@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>espaciovm</title>
+<meta name="description" content="espaciovm is a creative production studio: concept, design and manufacturing for brands and designers.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100..125,500..800&display=swap" rel="stylesheet">
+<style>
+  :root { --red:#e0282a; --yellow:#ffe52e; --ink:#141414; --paper:#fdfdfc; --muted:#8a8782; }
+  * { box-sizing:border-box; margin:0; padding:0; }
+  body { background:var(--paper); color:var(--ink); font-family:"Archivo",system-ui,sans-serif;
+         font-stretch:115%; font-weight:700; text-transform:uppercase; letter-spacing:-0.005em; }
+  .wrap { max-width:1100px; margin:0 auto; padding:0 24px; }
+
+  /* Brushed-steel banner */
+  .steel { position:relative; height:240px; overflow:hidden;
+    background:
+      repeating-linear-gradient(100deg, rgba(255,255,255,.07) 0 1px, transparent 1px 3px),
+      repeating-linear-gradient(80deg, rgba(0,0,0,.08) 0 1px, transparent 1px 4px),
+      radial-gradient(ellipse at 25% 40%, #d9d9d9 0%, transparent 55%),
+      radial-gradient(ellipse at 75% 70%, #cfcfcf 0%, transparent 50%),
+      linear-gradient(90deg, #6e6e6e, #a9a9a9 20%, #5c5c5c 45%, #b5b5b5 65%, #747474 85%, #9a9a9a); }
+  .steel::after { content:""; position:absolute; inset:0;
+    background: repeating-linear-gradient(35deg, transparent 0 40px, rgba(255,255,255,.05) 40px 41px); }
+  .steel .wrap { position:relative; z-index:1; height:100%; display:flex; align-items:center; justify-content:space-between; }
+  .mark { height:150px; width:auto; filter:drop-shadow(0 2px 6px rgba(0,0,0,.25)); }
+  .bar { position:absolute; right:0; top:50%; transform:translateY(-50%); background:var(--red); color:#fff;
+         font-size:clamp(22px,4vw,44px); font-weight:800; padding:6px 32px 6px 16px; width:min(52%,560px); line-height:1; }
+
+  main .wrap { display:grid; grid-template-columns:1fr 1fr; gap:48px; padding-top:72px; padding-bottom:72px; }
+  .wordmark { height:64px; width:auto; display:block; margin-bottom:36px; text-transform:none; }
+  .wordmark-fallback { font-size:44px; text-transform:none; font-stretch:100%; margin-bottom:36px; }
+  h1 { font-size:clamp(28px,3.6vw,44px); line-height:1; font-weight:800; }
+  .meta { display:grid; grid-template-columns:auto 1fr; gap:14px 24px; font-size:16px; align-content:start; }
+  .meta dd { text-align:right; }
+  .meta a { color:inherit; text-decoration:none; }
+
+  form { grid-column:1 / -1; margin-top:24px; }
+  .head, .row { display:grid; grid-template-columns:1fr 1fr; gap:24px; }
+  .head { font-size:16px; padding-bottom:12px; border-bottom:2px solid var(--ink); }
+  .head span:last-child { text-align:right; }
+  .field { padding:20px 0; border-bottom:1px solid var(--ink); }
+  label { display:block; font-size:12px; color:var(--muted); margin-bottom:6px; }
+  input, textarea { width:100%; border:0; background:transparent; outline:none; font:inherit; font-size:18px;
+         color:var(--ink); text-transform:none; font-weight:600; border-radius:0; }
+  textarea { resize:vertical; min-height:80px; }
+  .full { grid-column:1 / -1; }
+  .foot { display:flex; justify-content:space-between; align-items:flex-end; gap:24px; padding-top:28px; }
+  .note { color:var(--red); font-size:13px; line-height:1.3; }
+  button { background:var(--red); color:#fff; border:0; font:inherit; font-size:18px; font-weight:800;
+           padding:14px 36px; cursor:pointer; text-transform:uppercase; }
+  button:disabled { opacity:.5; cursor:wait; }
+  #status { font-size:14px; min-height:1.2em; margin-top:12px; text-align:right; }
+  .hp { display:none; }
+  .dot { display:inline-block; width:.55em; height:.55em; background:var(--yellow); border:1px solid var(--ink); border-radius:50%; vertical-align:.1em; margin-left:.25em; }
+
+  footer { border-top:2px solid var(--ink); }
+  footer .wrap { display:flex; justify-content:space-between; padding-top:20px; padding-bottom:28px; font-size:13px; }
+
+  @media (max-width:760px) {
+    .steel { height:180px; } .mark { height:100px; }
+    .bar { width:60%; padding-right:16px; }
+    main .wrap { grid-template-columns:1fr; padding-top:48px; }
+    .row { grid-template-columns:1fr; gap:0; }
+    .foot { flex-direction:column; align-items:flex-start; }
+  }
+</style>
+</head>
+<body>
+
+<section class="steel">
+  <div class="wrap">
+    <img class="mark" src="logo-mark.png" alt="espaciovm" onerror="this.style.display='none'">
+  </div>
+  <div class="bar">Creative production</div>
+</section>
+
+<main>
+  <div class="wrap">
+    <div>
+      <img class="wordmark" src="logo-wordmark.png" alt="espacio vm"
+           onerror="this.outerHTML='<div class=&quot;wordmark-fallback&quot;>espacio vm</div>'">
+      <h1>From concept<br>to made<span class="dot"></span></h1>
+    </div>
+
+    <dl class="meta">
+      <dt>Studio:</dt>       <dd>espaciovm</dd>
+      <dt>Services:</dt>     <dd>Concept<br>Design<br>Manufacturing</dd>
+      <dt>For:</dt>          <dd>Brands &amp;<br>designers</dd>
+      <dt>Contact:</dt>      <dd><a href="mailto:hello@espaciovm.com">hello@espaciovm.com</a></dd>
+    </dl>
+
+    <form id="contact" action="https://api.web3forms.com/submit" method="POST">
+      <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY">
+      <input type="hidden" name="subject" value="New enquiry — espaciovm.com">
+      <input type="hidden" name="from_name" value="espaciovm.com">
+      <input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off">
+
+      <div class="head"><span>New project:</span><span>Enquiry</span></div>
+      <div class="row">
+        <div class="field"><label for="name">Name</label><input id="name" name="name" required></div>
+        <div class="field"><label for="email">Email</label><input id="email" name="email" type="email" required></div>
+      </div>
+      <div class="row">
+        <div class="field"><label for="brand">Brand / company</label><input id="brand" name="brand"></div>
+        <div class="field"><label for="stage">Stage</label><input id="stage" name="stage" placeholder="Idea, design ready, sampling…"></div>
+      </div>
+      <div class="field full"><label for="message">What are you making?</label><textarea id="message" name="message" required></textarea></div>
+
+      <div class="foot">
+        <p class="note">Every project starts with a conversation.<br>We reply within 48 hours.</p>
+        <div>
+          <button type="submit">Send</button>
+          <p id="status" role="status"></p>
+        </div>
+      </div>
+    </form>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap"><span>© espaciovm</span><span>Porto · London</span></div>
+</footer>
+
+<script>
+  const form = document.getElementById('contact');
+  const status = document.getElementById('status');
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const btn = form.querySelector('button');
+    btn.disabled = true; status.textContent = 'Sending…';
+    try {
+      const res = await fetch(form.action, { method:'POST', headers:{Accept:'application/json'}, body:new FormData(form) });
+      const data = await res.json();
+      if (data.success) { form.reset(); status.textContent = 'Received. Talk soon.'; }
+      else { status.textContent = 'Error — email hello@espaciovm.com'; }
+    } catch { status.textContent = 'Error — email hello@espaciovm.com'; }
+    btn.disabled = false;
+  });
+</script>
+</body>
+</html>
